@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Github Profile Viewer",
+  "name": "Github Profile Search and Render",
   "icons": [
     {
       "src": "favicon.ico",
