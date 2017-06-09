@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <div className="app">
         <div className="pageTitle">
-          Github User search
+          Github Profile Viewer
         </div>
         <FormGroup className="searchSection">
           <InputGroup>
