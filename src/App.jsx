@@ -14,9 +14,26 @@ class App extends Component {
     this.setState({ userSearchQuiery: event.target.value });
   }
 
-  assignInputValue() {
-    const query = this.state.userSearchQuiery;
-    console.log("query:", query);
+  enterPressed(event) {
+    if (event.key === "Enter") {
+      this.searchUser();
+    }
+  }
+
+  searchUser() {
+    const BASE_URL = "https://api.github.com/users/";
+    const USER_ID = this.state.userSearchQuiery;
+    const FETCH_URL = BASE_URL + USER_ID;
+    console.log(FETCH_URL);
+    fetch(FETCH_URL, {
+      method: "GET"
+    })
+      .then(response => response.json())
+      .then(json => this.getDetailsFromJSON(json));
+  }
+
+  getDetailsFromJSON(json) {
+    console.log(json);
   }
 
   render() {
@@ -31,12 +48,10 @@ class App extends Component {
               className="inputField"
               placeholder="Enter User"
               onChange={event => this.getInputValue(event)}
+              onKeyPress={event => this.enterPressed(event)}
             />
-            <InputGroup.Addon>
-              <Glyphicon
-                glyph="search"
-                onClick={() => this.assignInputValue()}
-              />
+            <InputGroup.Addon onClick={() => this.searchUser()}>
+              <Glyphicon glyph="search" />
             </InputGroup.Addon>
           </InputGroup>
         </FormGroup>
