@@ -35,22 +35,24 @@ class Profile extends Component {
 
     if (this.props.data !== null) {
       githubData = this.props.data;
-    }
 
-    return (
-      <div>
-        <img className="profile-pic" alt="" src={githubData.avatar_url} />
+      return (
         <div>
-          {githubData.name}
+          <div>
+            <img className="profile-pic" src={githubData.avatar_url} />
+            <div className="name">
+              {githubData.name}
+            </div>
+          </div>
+          <div className="location">
+            {githubData.location}
+          </div>
+          <div className="bio">
+            {githubData.bio}
+          </div>
         </div>
-        <div>
-          {githubData.location}
-        </div>
-        <div>
-          {githubData.public_repos}
-        </div>
-      </div>
-    );
+      );
+    }
   }
 }
 

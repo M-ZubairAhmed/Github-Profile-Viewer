@@ -1,5 +1,21 @@
 .profile-pic {
-  border-radius: 100%;
   width: 10%;
   height: 10%;
+  border-radius: 100%;
+}
+
+.name {
+  font-size: 2em;
+  color: #494949;
+}
+
+.location {
+  font-size: 1em;
+  color: #494949;
+}
+
+.bio {
+  font: 1em;
+  color: #494949;
+  font-style: italic;
 }
