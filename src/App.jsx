@@ -1,39 +1,45 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, Glyphicon, InputGroup } from "react-bootstrap";
 import "./App.css";
+import Profile from "./Profile.jsx";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userSearchQuiery: ""
+      query: "",
+      data: ""
     };
   }
 
   getInputValue(event) {
-    this.setState({ userSearchQuiery: event.target.value });
+    this.setState({ query: event.target.value });
   }
 
   enterPressed(event) {
     if (event.key === "Enter") {
-      this.searchUser();
+      console.log("Search by pressing Enter");
+      this.getInputValue(event);
+      this.startSearch(this.state.query);
     }
   }
 
-  searchUser() {
+  startSearch(query) {
+    console.log("Searching for user =", query);
     const BASE_URL = "https://api.github.com/users/";
-    const USER_ID = this.state.userSearchQuiery;
+    const USER_ID = query;
     const FETCH_URL = BASE_URL + USER_ID;
-    console.log(FETCH_URL);
+    console.log("URL : ", FETCH_URL);
+
     fetch(FETCH_URL, {
       method: "GET"
     })
       .then(response => response.json())
-      .then(json => this.getDetailsFromJSON(json));
-  }
-
-  getDetailsFromJSON(json) {
-    console.log(json);
+      .then(json => {
+        this.setState({
+          data: json
+        });
+      });
   }
 
   render() {
@@ -47,15 +53,18 @@ class App extends Component {
             <FormControl
               className="inputField"
               placeholder="Enter User"
+              value={this.state.query}
               onChange={event => this.getInputValue(event)}
               onKeyPress={event => this.enterPressed(event)}
             />
-            <InputGroup.Addon onClick={() => this.searchUser()}>
+            <InputGroup.Addon
+              onClick={() => this.startSearch(this.state.query)}
+            >
               <Glyphicon glyph="search" />
             </InputGroup.Addon>
           </InputGroup>
         </FormGroup>
-        <div className="displayArea" />
+        <Profile data={this.state.data} />
       </div>
     );
   }
