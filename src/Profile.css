@@ -1,7 +1,6 @@
 .cover {
   width: 80%;
   height: 200px;
-
   display: block;
   margin: 0 auto;
   object-fit: cover;
@@ -11,31 +10,30 @@
 
 .profile-pic {
   width: 15%;
-
   border: 5px solid rgba(0, 0, 0, 0.2);
   position: relative;
   top: -75px;
-
   margin: 0 auto;
   display: block;
   height: 15%;
   border-radius: 100%;
 }
 
-.name {
+.name, .location, .bio {
   text-align: center;
-  font-size: 2em;
-  font-weight: bold;
   color: #212121;
+}
+
+.name {
+  font-size: 2.5em;
+  font-weight: bold;
 }
 
 .location {
   font-size: 1em;
-  color: #494949;
 }
 
 .bio {
-  font: 1em;
-  color: #494949;
+  font-size: 1.3em;
   font-style: italic;
 }

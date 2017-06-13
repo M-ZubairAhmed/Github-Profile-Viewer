@@ -8,7 +8,8 @@ class App extends Component {
     super(props);
     this.state = {
       query: "",
-      data: ""
+      data: "",
+      passedQuery: ""
     };
   }
 
@@ -40,6 +41,10 @@ class App extends Component {
           data: json
         });
       });
+    this.setState({
+      passedQuery: query,
+      query: ""
+    });
   }
 
   render() {
@@ -66,7 +71,7 @@ class App extends Component {
             </InputGroup>
           </FormGroup>
         </div>
-        <Profile data={this.state.data} />
+        <Profile data={this.state.data} query={this.state.passedQuery} />
       </div>
     );
   }
