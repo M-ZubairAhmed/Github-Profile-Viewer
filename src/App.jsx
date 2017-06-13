@@ -45,25 +45,27 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <div className="pageTitle">
-          Github Profile Viewer
+        <div className="headSection">
+          <div className="pageTitle">
+            Github Profile Viewer
+          </div>
+          <FormGroup className="searchSection">
+            <InputGroup>
+              <FormControl
+                className="inputField"
+                placeholder="Enter User"
+                value={this.state.query}
+                onChange={event => this.getInputValue(event)}
+                onKeyPress={event => this.enterPressed(event)}
+              />
+              <InputGroup.Addon
+                onClick={() => this.startSearch(this.state.query)}
+              >
+                <Glyphicon glyph="search" />
+              </InputGroup.Addon>
+            </InputGroup>
+          </FormGroup>
         </div>
-        <FormGroup className="searchSection">
-          <InputGroup>
-            <FormControl
-              className="inputField"
-              placeholder="Enter User"
-              value={this.state.query}
-              onChange={event => this.getInputValue(event)}
-              onKeyPress={event => this.enterPressed(event)}
-            />
-            <InputGroup.Addon
-              onClick={() => this.startSearch(this.state.query)}
-            >
-              <Glyphicon glyph="search" />
-            </InputGroup.Addon>
-          </InputGroup>
-        </FormGroup>
         <Profile data={this.state.data} />
       </div>
     );

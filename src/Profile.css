@@ -1,12 +1,32 @@
+.cover {
+  width: 80%;
+  height: 200px;
+
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  filter: blur(15px);
+  opacity: 0.4;
+}
+
 .profile-pic {
-  width: 10%;
-  height: 10%;
+  width: 15%;
+
+  border: 5px solid rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: -75px;
+
+  margin: 0 auto;
+  display: block;
+  height: 15%;
   border-radius: 100%;
 }
 
 .name {
+  text-align: center;
   font-size: 2em;
-  color: #494949;
+  font-weight: bold;
+  color: #212121;
 }
 
 .location {

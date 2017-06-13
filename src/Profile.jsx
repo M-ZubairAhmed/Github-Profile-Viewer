@@ -37,12 +37,11 @@ class Profile extends Component {
       githubData = this.props.data;
 
       return (
-        <div>
-          <div>
-            <img className="profile-pic" src={githubData.avatar_url} />
-            <div className="name">
-              {githubData.name}
-            </div>
+        <div className="footSection">
+          <img className="cover" src={githubData.avatar_url} />
+          <img className="profile-pic" src={githubData.avatar_url} />
+          <div className="name">
+            {githubData.name}
           </div>
           <div className="location">
             {githubData.location}
