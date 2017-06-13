@@ -30,7 +30,7 @@ class App extends Component {
     const BASE_URL = "https://api.github.com/users/";
     const USER_ID = query;
     const FETCH_URL = BASE_URL + USER_ID;
-    console.log("URL : ", FETCH_URL);
+    console.log("from URL : ", FETCH_URL);
 
     fetch(FETCH_URL, {
       method: "GET"
@@ -41,6 +41,8 @@ class App extends Component {
           data: json
         });
       });
+
+    //clearing the search bar
     this.setState({
       passedQuery: query,
       query: ""
@@ -58,7 +60,7 @@ class App extends Component {
             <InputGroup>
               <FormControl
                 className="inputField"
-                placeholder="Enter User"
+                placeholder="Search users"
                 value={this.state.query}
                 onChange={event => this.getInputValue(event)}
                 onKeyPress={event => this.enterPressed(event)}

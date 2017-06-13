@@ -55,8 +55,11 @@ class Profile extends Component {
 
     if (this.props.data === null || queryLenght === 0) {
       footer = (
-        <div>
-          Type the user name to start the search!
+        <div className="search-start">
+          <img className="search-img" src="./binocular.png" />
+          <p>
+            Type in user's name to start the search
+          </p>
         </div>
       );
     } else {
@@ -64,8 +67,9 @@ class Profile extends Component {
       console.log("data", githubData.message);
       if (githubData.message === "Not Found") {
         footer = (
-          <div>
-            No user Found
+          <div className="notfound-main">
+            <img className="notfound-img" src="./404.png" />
+            <p>No user exist with {this.props.query}</p>
           </div>
         );
       } else {
@@ -74,7 +78,7 @@ class Profile extends Component {
             <img className="cover" src={githubData.avatar_url} />
             <img className="profile-pic" src={githubData.avatar_url} />
             <div className="name">
-              {githubData.name}
+              {githubData.name !== null ? githubData.name : githubData.login}
             </div>
             <div className="bio">
               {githubData.bio}
@@ -82,17 +86,22 @@ class Profile extends Component {
             <div className="location">
               {githubData.location}
             </div>
-            <div>
-              <div>Social</div>
-              <div className="followers-main">
-                <div className="followers"> Followers</div>
+            <ul className="social-main">
+              <li className="followers-main">
+                <div className="followers">Followers</div>
                 <div className="followers-count">{githubData.followers}</div>
-              </div>
-              <div className="followin-main">
-                <div className="following"> Following</div>
+              </li>
+              <li className="following-main">
+                <div className="following">Following</div>
                 <div className="following-count">{githubData.following}</div>
-              </div>
-            </div>
+              </li>
+              <li className="hireable-main">
+                <div className="hirable">Hirable</div>
+                <div className="hirable-count">
+                  {githubData.hireable ? "Available" : "Occupied"}
+                </div>
+              </li>
+            </ul>
           </div>
         );
       }
