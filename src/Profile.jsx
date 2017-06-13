@@ -86,11 +86,11 @@ class Profile extends Component {
               <div>Social</div>
               <div className="followers-main">
                 <div className="followers"> Followers</div>
-                <div className="followers-count">10</div>
+                <div className="followers-count">{githubData.followers}</div>
               </div>
               <div className="followin-main">
                 <div className="following"> Following</div>
-                <div className="following-count">2</div>
+                <div className="following-count">{githubData.following}</div>
               </div>
             </div>
           </div>
