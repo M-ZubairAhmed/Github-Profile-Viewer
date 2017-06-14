@@ -57,6 +57,11 @@ class Pointer extends Component {
             following={githubData.following}
             followers={githubData.followers}
             hireable={githubData.hireable}
+            repos_url={githubData.repos_url}
+            public_repos={githubData.public_repos}
+            gists_url={githubData.gists_url}
+            public_gists={githubData.public_gists}
+            starred_url={githubData.starred_url}
           />
         );
       }

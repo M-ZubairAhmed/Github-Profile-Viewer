@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Image } from "react-bootstrap";
+import Projects from "./Projects.jsx";
 import "./Profile.css";
 
 class Profile extends Component {
@@ -43,6 +44,13 @@ class Profile extends Component {
             </div>
           </li>
         </ul>
+        <Projects
+          repos_url={this.props.repos_url}
+          public_repos={this.props.public_repos}
+          gists_url={this.props.gists_url}
+          public_gists={this.props.public_gists}
+          starred_url={this.props.starred_url}
+        />
       </div>
     );
   }
