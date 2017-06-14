@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Image } from "react-bootstrap";
 import "./Profile.css";
 
 class Profile extends Component {
@@ -10,10 +11,11 @@ class Profile extends Component {
           alt="cover for users github"
           src={this.props.avatar_url}
         />
-        <img
+        <Image
           className="profile-pic"
           alt="users github avatar"
           src={this.props.avatar_url}
+          circle
         />
         <div className="name">
           {this.props.name !== null ? this.props.name : this.props.login}
