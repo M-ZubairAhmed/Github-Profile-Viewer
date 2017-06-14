@@ -16,6 +16,7 @@ class Profile extends Component {
           alt="users github avatar"
           src={this.props.avatar_url}
           circle
+          responsive
         />
         <div className="name">
           {this.props.name !== null ? this.props.name : this.props.login}
