@@ -1,0 +1,10 @@
+.search-start, .notfound-main {
+  margin-top: 5%;
+  text-align: center;
+  font-size: 3em;
+  color: #757575;
+}
+
+.search-img, .notfound-img {
+  width: 15%;
+}
