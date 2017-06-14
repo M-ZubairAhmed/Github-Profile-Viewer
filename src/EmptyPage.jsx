@@ -6,19 +6,29 @@ class EmptyPage extends Component {
     //Page to be displayed when search is starting
     if (this.props.pageType === "StartingPage") {
       return (
-        <div className="search-start">
-          <img className="search-img" src="./binocular.png" />
-          <p>
+        <div className="empty-div">
+          <img
+            className="empty-img"
+            src="./binocular.png"
+            alt="Start your search"
+          />
+          <p className="empty-text">
             Type in user's name to start the search
           </p>
         </div>
       );
-    } else if (this.props.pageType == "NotFoundPage") {
+    } else if (this.props.pageType === "NotFoundPage") {
       //Page to be displayed when no user is found
       return (
-        <div className="notfound-main">
-          <img className="notfound-img" src="./404.png" />
-          <p>No user exist with {this.props.query}</p>
+        <div className="empty-div">
+          <img
+            className="empty-img"
+            src="./404.png"
+            alt="404 error user not found"
+          />
+          <p className="empty-text">
+            No user exist with <b>{this.props.query}</b>
+          </p>
         </div>
       );
     }

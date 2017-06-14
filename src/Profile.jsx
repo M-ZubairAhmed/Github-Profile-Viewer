@@ -60,7 +60,7 @@ class Profile extends Component {
       githubData = this.props.data;
       console.log("data", githubData.message);
       if (githubData.message === "Not Found") {
-        footer = <EmptyPage pageType="NotFoundPage" />;
+        footer = <EmptyPage pageType="NotFoundPage" query={this.props.query} />;
       } else {
         footer = (
           <div className="footSection">
