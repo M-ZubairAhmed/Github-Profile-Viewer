@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Profile.css";
+import EmptyPage from "./EmptyPage.jsx";
 
 class Profile extends Component {
   constructor(props) {
@@ -54,24 +55,12 @@ class Profile extends Component {
     let queryLenght = String.prototype.trim.call(this.props.query).length;
 
     if (this.props.data === null || queryLenght === 0) {
-      footer = (
-        <div className="search-start">
-          <img className="search-img" src="./binocular.png" />
-          <p>
-            Type in user's name to start the search
-          </p>
-        </div>
-      );
+      footer = <EmptyPage pageType="StartingPage" />;
     } else {
       githubData = this.props.data;
       console.log("data", githubData.message);
       if (githubData.message === "Not Found") {
-        footer = (
-          <div className="notfound-main">
-            <img className="notfound-img" src="./404.png" />
-            <p>No user exist with {this.props.query}</p>
-          </div>
-        );
+        footer = <EmptyPage pageType="NotFoundPage" />;
       } else {
         footer = (
           <div className="footSection">
