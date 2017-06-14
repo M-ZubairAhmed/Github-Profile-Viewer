@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, Glyphicon, InputGroup } from "react-bootstrap";
 import "./App.css";
-import Profile from "./Profile.jsx";
+import Pointer from "./Pointer.jsx";
 
 class App extends Component {
   constructor(props) {
@@ -73,7 +73,7 @@ class App extends Component {
             </InputGroup>
           </FormGroup>
         </div>
-        <Profile data={this.state.data} query={this.state.passedQuery} />
+        <Pointer data={this.state.data} query={this.state.passedQuery} />
       </div>
     );
   }

@@ -13,7 +13,7 @@ class EmptyPage extends Component {
             alt="Start your search"
           />
           <p className="empty-text">
-            Type in user's name to start the search
+            Type in users name to start the search
           </p>
         </div>
       );
