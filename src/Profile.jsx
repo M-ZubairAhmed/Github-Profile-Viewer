@@ -5,6 +5,7 @@ import "./Profile.css";
 
 class Profile extends Component {
   render() {
+    console.log("profile rendered");
     return (
       <div className="footSection">
         <img

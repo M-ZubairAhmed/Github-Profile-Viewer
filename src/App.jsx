@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { FormGroup, FormControl, Glyphicon, InputGroup } from "react-bootstrap";
 import "./App.css";
 import Pointer from "./Pointer.jsx";
+import Spinner from "./Spinner.jsx";
 
 class App extends Component {
   constructor(props) {
@@ -9,7 +10,8 @@ class App extends Component {
     this.state = {
       query: "",
       data: "",
-      passedQuery: ""
+      passedQuery: "",
+      isLoaded: false
     };
   }
 
@@ -26,6 +28,9 @@ class App extends Component {
   }
 
   startSearch(query) {
+    this.setState({
+      isLoaded: true
+    });
     console.log("Searching for user =", query);
     const BASE_URL = "https://api.github.com/users/";
     const USER_ID = query;
@@ -38,7 +43,8 @@ class App extends Component {
       .then(response => response.json())
       .then(json => {
         this.setState({
-          data: json
+          data: json,
+          isLoaded: false
         });
       });
 
@@ -50,6 +56,8 @@ class App extends Component {
   }
 
   render() {
+    if (true) {
+    }
     return (
       <div className="app">
         <div className="headSection">
@@ -73,6 +81,7 @@ class App extends Component {
             </InputGroup>
           </FormGroup>
         </div>
+        <Spinner run={this.state.isLoaded} />
         <Pointer data={this.state.data} query={this.state.passedQuery} />
       </div>
     );
