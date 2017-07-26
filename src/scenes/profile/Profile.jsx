@@ -1,11 +1,9 @@
-import React, { Component } from "react";
-import { Image } from "react-bootstrap";
-import Projects from "./Projects.jsx";
-import "./Profile.css";
+import React, { Component } from 'react';
+import { Image } from 'react-bootstrap';
+import './profile.css';
 
 class Profile extends Component {
   render() {
-    console.log("profile rendered");
     return (
       <div className="footSection">
         <img
@@ -32,26 +30,23 @@ class Profile extends Component {
         <ul className="social-main">
           <li className="followers-main">
             <div className="followers">Followers</div>
-            <div className="followers-count">{this.props.followers}</div>
+            <div className="followers-count">
+              {this.props.followers}
+            </div>
           </li>
           <li className="following-main">
             <div className="following">Following</div>
-            <div className="following-count">{this.props.following}</div>
+            <div className="following-count">
+              {this.props.following}
+            </div>
           </li>
           <li className="hireable-main">
             <div className="hirable">Hirable</div>
             <div className="hirable-count">
-              {this.props.hireable ? "Available" : "Occupied"}
+              {this.props.hireable ? 'Available' : 'Occupied'}
             </div>
           </li>
         </ul>
-        <Projects
-          repos_url={this.props.repos_url}
-          public_repos={this.props.public_repos}
-          gists_url={this.props.gists_url}
-          public_gists={this.props.public_gists}
-          starred_url={this.props.starred_url}
-        />
       </div>
     );
   }

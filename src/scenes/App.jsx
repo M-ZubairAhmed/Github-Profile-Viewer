@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {} from 'react-bootstrap';
 import './App.css';
-import Pointer from './Pointer.jsx';
-import Spinner from './components/spinner/Spinner.jsx';
-import Search from './components/search/Search.jsx';
+import Pointer from '../route/Pointer.jsx';
+import Spinner from '../components/spinner/Spinner.jsx';
+import Search from '../components/search/Search.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -17,7 +17,8 @@ class App extends Component {
 
   startSearch = query => {
     this.setState({
-      isLoaded: true
+      isLoaded: true,
+      passedQuery: query
     });
     console.log('Searching for user =', query);
     const BASE_URL = 'https://api.github.com/users/';
@@ -35,15 +36,9 @@ class App extends Component {
           isLoaded: false
         });
       });
-
-    this.setState({
-      passedQuery: query
-    });
   };
 
   render() {
-    if (true) {
-    }
     return (
       <div className="app">
         <div className="headSection">

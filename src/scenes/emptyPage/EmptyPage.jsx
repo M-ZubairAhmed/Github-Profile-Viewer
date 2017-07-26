@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import "./EmptyPage.css";
+import React, { Component } from 'react';
+import './emptyPage.css';
 
 class EmptyPage extends Component {
   render() {
     //Component to be displayed when search is starting
-    if (this.props.pageType === "StartingPage") {
+    if (this.props.pageType === 'StartingPage') {
       return (
         <div className="empty-div">
           <img
@@ -12,12 +12,10 @@ class EmptyPage extends Component {
             src="./binocular.png"
             alt="Start your search"
           />
-          <p className="empty-text">
-            Type in users name to start the search
-          </p>
+          <p className="empty-text">Type in users name to start the search</p>
         </div>
       );
-    } else if (this.props.pageType === "NotFoundPage") {
+    } else if (this.props.pageType === 'NotFoundPage') {
       //Component to be displayed when no user is found
       return (
         <div className="empty-div">

@@ -18,7 +18,9 @@
   display: block;
 }
 
-.name, .location, .bio {
+.name,
+.location,
+.bio {
   text-align: center;
   color: #212121;
 }
@@ -53,7 +55,9 @@
   max-width: 800px;
 }
 
-.followers-main, .following-main, .hireable-main {
+.followers-main,
+.following-main,
+.hireable-main {
   -webkit-flex: 1 0 0px;
   display: flex;
   padding: 20px;
@@ -72,6 +76,8 @@
   overflow: hidden;
 }
 
-.followers-count, .following-count, .hirable-count {
+.followers-count,
+.following-count,
+.hirable-count {
   font-size: 1.5em;
 }

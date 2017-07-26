@@ -1,42 +1,42 @@
-import React, { Component } from "react";
-import EmptyPage from "./EmptyPage.jsx";
-import Profile from "./Profile.jsx";
+import React, { Component } from 'react';
+import EmptyPage from '../scenes/emptyPage/EmptyPage.jsx';
+import Profile from '../scenes/profile/Profile.jsx';
 
 class Pointer extends Component {
   render() {
-    let footer = "";
+    let footer = '';
 
     let githubData = {
-      avatar_url: "",
-      bio: "",
-      blog: "",
-      company: "",
-      created_at: "",
-      email: "",
-      events_url: "",
-      followers: "",
-      followers_url: "",
-      following: "",
-      following_url: "",
-      gists_url: "",
-      gravatar_id: "",
-      hireable: "",
-      html_url: "",
-      id: "",
-      location: "",
-      login: "",
-      name: "",
-      organizations_url: "",
-      public_gists: "",
-      public_repos: "",
-      received_events_url: "",
-      repos_url: "",
-      starred_url: "",
-      subscriptions_url: "",
-      updated_at: "",
+      avatar_url: '',
+      bio: '',
+      blog: '',
+      company: '',
+      created_at: '',
+      email: '',
+      events_url: '',
+      followers: '',
+      followers_url: '',
+      following: '',
+      following_url: '',
+      gists_url: '',
+      gravatar_id: '',
+      hireable: '',
+      html_url: '',
+      id: '',
+      location: '',
+      login: '',
+      name: '',
+      organizations_url: '',
+      public_gists: '',
+      public_repos: '',
+      received_events_url: '',
+      repos_url: '',
+      starred_url: '',
+      subscriptions_url: '',
+      updated_at: '',
       //404 not found JSON below
-      message: "",
-      documentation_url: ""
+      message: '',
+      documentation_url: ''
     };
 
     let queryLenght = String.prototype.trim.call(this.props.query).length;
@@ -45,7 +45,7 @@ class Pointer extends Component {
       footer = <EmptyPage pageType="StartingPage" />;
     } else {
       githubData = this.props.data;
-      if (githubData.message === "Not Found") {
+      if (githubData.message === 'Not Found') {
         footer = <EmptyPage pageType="NotFoundPage" query={this.props.query} />;
       } else {
         footer = (
