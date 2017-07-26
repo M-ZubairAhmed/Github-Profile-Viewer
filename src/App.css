@@ -1,17 +1,17 @@
 .dark-primary-color {
-  background: #5D4037;
+  background: #5d4037;
 }
 .default-primary-color {
   background: #795548;
 }
 .light-primary-color {
-  background: #D7CCC8;
+  background: #d7ccc8;
 }
 .text-primary-color {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .accent-color {
-  background: #536DFE;
+  background: #536dfe;
 }
 .primary-text-color {
   color: #212121;
@@ -20,31 +20,20 @@
   color: #757575;
 }
 .divider-color {
-  border-color: #BDBDBD;
+  border-color: #bdbdbd;
 }
 
 .headSection {
   padding: 1.5%;
   border-bottom: solid;
   margin-bottom: 0.8%;
-  background-color: #5D4037;
+  background-color: #5d4037;
   box-shadow: 0px 5px 5px -5px rgba(50, 50, 50, 0.8);
 }
 
 .pageTitle {
   font-size: 2em;
   padding-bottom: 1%;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
-}
-
-.searchSection {
-  width: 50%;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.inputField {
-  text-align: center;
-  font-size: 1.3em;
 }
