@@ -9,24 +9,18 @@ import {
   Glyphicon
 } from 'react-bootstrap';
 
-export default class Search extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      query: ''
-    };
-  }
+let query = '';
 
+export default class Search extends Component {
   handleChange = event => {
-    this.setState({ query: event.target.value });
+    query = event.target.value;
     if (event.key === 'Enter') {
-      console.log('enter pressed');
       this.sendQuery();
     }
   };
 
   sendQuery = () => {
-    this.props.startSearch(this.state.query);
+    this.props.startSearch(query);
   };
 
   render() {
@@ -38,11 +32,10 @@ export default class Search extends Component {
               <InputGroup>
                 <FormControl
                   placeholder="Search users"
-                  value={this.state.query}
                   onChange={this.handleChange}
                   onKeyPress={this.handleChange}
                 />
-                <InputGroup.Addon onClick={this.startSearch}>
+                <InputGroup.Addon onClick={this.sendQuery}>
                   <Glyphicon glyph="search" />
                 </InputGroup.Addon>
               </InputGroup>

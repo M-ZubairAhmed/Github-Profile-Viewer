@@ -9,7 +9,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      query: '',
       data: '',
       passedQuery: '',
       isLoaded: false
@@ -37,10 +36,8 @@ class App extends Component {
         });
       });
 
-    //clearing the search bar
     this.setState({
-      passedQuery: query,
-      query: ''
+      passedQuery: query
     });
   };
 
