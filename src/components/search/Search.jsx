@@ -12,26 +12,37 @@ import {
 export default class Search extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      query: ''
+    };
   }
+
+  handleChange = event => {
+    this.setState({ query: event.target.value });
+    if (event.key === 'Enter') {
+      console.log('enter pressed');
+      this.sendQuery();
+    }
+  };
+
+  sendQuery = () => {
+    this.props.startSearch(this.state.query);
+  };
 
   render() {
     return (
-      <Grid fluid={false}>
+      <Grid>
         <Row>
           <Col lg={6} lgOffset={3} sm={12} md={9}>
-            <FormGroup className="searchSection">
+            <FormGroup>
               <InputGroup>
                 <FormControl
-                  className="inputField"
                   placeholder="Search users"
-                  // value={this.state.query}
-                  // onChange={this.handleChange}
-                  // onKeyPress={this.handleChange}
+                  value={this.state.query}
+                  onChange={this.handleChange}
+                  onKeyPress={this.handleChange}
                 />
-                <InputGroup.Addon
-                // onClick={() => this.startSearch(this.state.query)}
-                >
+                <InputGroup.Addon onClick={this.startSearch}>
                   <Glyphicon glyph="search" />
                 </InputGroup.Addon>
               </InputGroup>

@@ -16,15 +16,7 @@ class App extends Component {
     };
   }
 
-  handleChange = event => {
-    this.setState({ query: event.target.value });
-    if (event.key === 'Enter') {
-      console.log('Search by pressing Enter');
-      this.startSearch(this.state.query);
-    }
-  };
-
-  startSearch(query) {
+  startSearch = query => {
     this.setState({
       isLoaded: true
     });
@@ -50,7 +42,7 @@ class App extends Component {
       passedQuery: query,
       query: ''
     });
-  }
+  };
 
   render() {
     if (true) {
@@ -59,7 +51,7 @@ class App extends Component {
       <div className="app">
         <div className="headSection">
           <div className="pageTitle">Github Profile Viewer</div>
-          <Search />
+          <Search startSearch={this.startSearch} />
         </div>
         <Spinner run={this.state.isLoaded} />
         <Pointer data={this.state.data} query={this.state.passedQuery} />
