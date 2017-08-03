@@ -6,7 +6,8 @@
   "dependencies": {
     "react": "^15.5.4",
     "react-bootstrap": "^0.31.0",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "semantic-ui-react": "^0.71.3"
   },
   "devDependencies": {
     "eslint": "^4.0.0",
