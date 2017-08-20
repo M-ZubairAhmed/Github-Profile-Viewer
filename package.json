@@ -1,12 +1,13 @@
 {
   "name": "github-profile-viewer",
-  "homepage": "http://M-ZubairAhmed.github.io/Github-Profile-Viewer",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^15.5.4",
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.2",
+    "semantic-ui": "^2.2.11",
     "semantic-ui-react": "^0.71.3"
   },
   "devDependencies": {
@@ -19,8 +20,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   }
 }
