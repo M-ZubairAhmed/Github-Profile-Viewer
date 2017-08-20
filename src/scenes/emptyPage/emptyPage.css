@@ -1,0 +1,16 @@
+.empty-div {
+  margin-top: 5%;
+  text-align: center;
+  font-size: 3em;
+  color: #757575;
+}
+
+.empty-img {
+  width: 15%;
+}
+
+.empty-text {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
