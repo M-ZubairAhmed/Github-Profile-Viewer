@@ -2,15 +2,14 @@
   "name": "github-profile-viewer",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "8.3.0"
-  },
   "dependencies": {
     "react": "^15.5.4",
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.2",
-    "semantic-ui-react": "^0.71.3"
+    "semantic-ui-react": "^0.71.3",
+    "react-scripts": "1.0.11",
+
   },
   "devDependencies": {
     "eslint": "^4.0.0",
