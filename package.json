@@ -2,6 +2,9 @@
   "name": "github-profile-viewer",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "8.3.0"
+  },
   "dependencies": {
     "react": "^15.5.4",
     "react-bootstrap": "^0.31.0",
